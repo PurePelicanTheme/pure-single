@@ -162,11 +162,19 @@ pre {
 }
 
 .content {
-    padding: 2em 3em 0;
+    padding: 0 0 12px 0;
+    /*
     max-width: 1000px;
     font-size: 110%;
     line-height: 1.45;
     color: #333332;
+    */
+}
+
+.column {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .post {
