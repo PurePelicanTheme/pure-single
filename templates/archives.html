@@ -10,8 +10,7 @@
                 <h1 class="content-subhead">All posts</h1>
                 {% for article in dates %}
                     <div class="archive-item">
-                        <h5 class="archive-date">{{ article.date|strftime('%Y') }}</h5>
-                        <h4 class="archive-date">{{ article.date|strftime('%d %B') }}</h4>
+                        <h5 class="archive-date">{{ article.date|strftime('%Y %d %B') }}</h5>
                         <div class="archive-post"><a href="{{ article.url }}">{{ article.title }}</a></div>
                     </div>
                 {% endfor %}

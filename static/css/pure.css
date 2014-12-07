@@ -86,6 +86,12 @@ pre {
     text-transform: uppercase;
 }
 
+.article-title {
+    font-size: 2em;
+    color: #333332;
+    letter-spacing: -1px;
+}
+
 .article-info {
     padding-top: 15px;
     clear: right;
@@ -207,10 +213,12 @@ pre {
 
 .archive-date {
     margin: 0;
+    color: rgb(155, 147, 147);
 }
 
 .archive-post {
     line-height: 130%;
+    font-size: 1.5em;
 }
 
 .archive-meta {
