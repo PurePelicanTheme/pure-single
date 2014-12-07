@@ -19,7 +19,7 @@
     {% endif %}
 
     {% block head %}
-        <title>{% block title %}{{ SITENAME }} // {{ TAGLINE }}{% endblock title %}</title>
+    <title>{% block title %}{{ SITENAME }} {% if TAGLINE %} // {{ TAGLINE }} {% endif %}{% endblock title %}</title>
     {% endblock head %}
 
     {% if FAVICON_URL %}
