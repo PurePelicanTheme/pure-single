@@ -28,6 +28,15 @@
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,300italic,300|Roboto:400,300,300italic,400italic,700,500|Open+Sans:400,400italic,600|Source+Sans+Pro:400,300italic,300,400italic,600' rel='stylesheet' type='text/css'>
+
+    <link href='http://fonts.googleapis.com/css?family=PT+Mono|Inconsolata|Source+Code+Pro:400,300,500|Ubuntu+Mono:400,400italic,700' rel='stylesheet' type='text/css'>
+
+    <link href='http://fonts.googleapis.com/css?family=PT+Serif|PT+Sans|Libre+Baskerville|Droid+Serif' rel='stylesheet' type='text/css'>
+    
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pure.css">
     {% block head_css %}{% endblock %}
 
@@ -37,31 +46,47 @@
 
 <body>
     <div class="pure-g-r" id="layout">
+        {% block main_sidebar %}
+
         <div class="sidebar pure-u">
-            <div class="cover-img" style="background-image: url('{% block sidebar %}{{ COVER_IMG_URL }}{% endblock %}')">
+            <!-- <div class="cover-img" style="background-image: url('{% block sidebar %}{{ COVER_IMG_URL }}{% endblock %}')"> -->
                 <div class="cover-body">
                     <header class="header">
+
                         <hgroup>
+
                             {% if PROFILE_IMG_URL %}
-                            <img class="avatar" src="{{ PROFILE_IMG_URL }}">
+                                <img class="avatar" src="{{ PROFILE_IMG_URL }}">
                             {% endif %}
+
                             <h1 class="brand-main"><a href="{{ SITEURL }}">{{ SITENAME }}</a></h1>
-                            <p class="tagline">{{ TAGLINE }}</p>
-                            {% for title, link in MENUITEMS %}
-                                <p class="links"><a href="{{ SITEURL }}/{{ link }}">{{ title }}</a></p>
-                            {% endfor %}
-                                <p class="social">
-                            {% for title, link in SOCIAL %}
+
+                            {% if TAGLINE %} <p class="tagline">{{ TAGLINE }}</p> {% endif %}
+
+                            <p class="links">
+                                {% for title, link in MENUITEMS %}
+                                    <a href="{{ SITEURL }}/{{ link }}">{{ title }}
+                                        {% if not loop.index is divisibleby 2 %}
+                                            |
+                                        {% endif %}
+                                    </a>
+                                {% endfor %}
+                            </div>
+
+                            <p class="social">
+                                {% for title, link in SOCIAL %}
                                     <a href="{{ link }}">
                                         <i class="fa fa-{{ title }} fa-3x"></i>
                                     </a>
-                            {% endfor %}
-                                </p>
+                                {% endfor %}
+                            </p>
                         </hgroup>
                     </header>
                 </div>
             </div>
         </div>
+        {% endblock %}
+
         {% block content %}
         {% endblock %}
     </div>
