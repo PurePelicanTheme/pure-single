@@ -161,20 +161,6 @@ pre {
     color: #fff;
 }
 
-.links a {
-    font-size: 15px;
-
-    /*
-    padding-left: 15px;
-    */
-    font-family: 'PT Serif', serif;
-    margin: 0px;
-    letter-spacing: 2px;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-    text-decoration: none;
-    color: #000; 
-}
-
 .content-subhead {
     text-transform: uppercase;
     color: #aaa;
@@ -195,14 +181,6 @@ pre {
     */
 }
 
-.column {
-    /*font-family: 'Open Sans', serif; */
-    /*font-family: 'PT Serif', serif; */
-    font-family: 'Libre Baskerville', serif;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
 
 .post {
     padding-bottom: 1em;
@@ -299,6 +277,62 @@ pre {
 .highlight pre {
     font-size: 75%;
 }
+
+
+/*************************************
+ * New Layout styles
+ ************************************/
+
+.container-header {
+    background-color: rgb(236, 234, 234);
+    align-items: center;
+    height: 1.5em
+}
+
+.links a {
+    font-size: 15px;
+
+    /*
+    padding-left: 15px;
+    */
+    font-family: 'PT Serif', serif;
+    margin: 0px;
+    letter-spacing: 2px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    text-decoration: none;
+    color: #000; 
+}
+
+
+.body-sidebar {
+    left: 0px;
+    position: absolute;
+    top: 4em;
+    width: 25%;
+    height: 100%;
+}
+
+.body-column {
+    width: 75%;
+    float: right;
+    position: relative;
+    right: 0px;
+}
+
+.column {
+    /*font-family: 'Open Sans', serif; */
+    /*font-family: 'PT Serif', serif; */
+    font-family: 'Libre Baskerville', serif;
+    max-width: 600px;
+    margin: auto calc(33.4% - 290px) 0; /* Making the column on the middle of the
+                                           screen. Considering the padding also */
+    padding: 0 20px;
+}
+
+
+/******************/
+
+
 
 /* LAYOUT CSS */
 #layout {
