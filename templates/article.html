@@ -25,24 +25,22 @@
 {% endblock %}
 
 {% block content %}
-    <div class="pure-u">
-        <div class="content">
-            <div class="column">
-                <section class="post">
-                    <header class="post-header">
-                        <h1 class="article-title">{{ article.title }}</h1>
-                            <p class="post-meta">
-                                Tags: {% for tag in article.tags %}
-                                    <a class="post-category" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
-                                {% endfor %}
-                            </p>
-                    </header>
-                </section>
-                {{ article.content }}
-                <a href="#" class="go-top">Go Top</a>
-                {% include 'disqus.html' %}
-                {% include 'footer.html' %}
-            </div>
+    <div class="content">
+        <div class="column">
+            <section class="post">
+                <header class="post-header">
+                    <h1 class="article-title">{{ article.title }}</h1>
+                        <p class="post-meta">
+                            Tags: {% for tag in article.tags %}
+                                <a class="post-category" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
+                            {% endfor %}
+                        </p>
+                </header>
+            </section>
+            {{ article.content }}
+            <a href="#" class="go-top">Go Top</a>
+            {% include 'disqus.html' %}
+            {% include 'footer.html' %}
         </div>
     </div>
 {% endblock  %}
