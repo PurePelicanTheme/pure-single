@@ -13,6 +13,9 @@ a:focus {
     text-decoration: underline;
 }
 
+h1, h2, h3 {
+    font-family: 'PT Serif', serif;
+}
 
 .comments {
     padding: 50px 0 0;
@@ -174,6 +177,7 @@ pre {
 .archive-post {
     line-height: 130%;
     font-size: 1.5em;
+    font-family: 'PT Serif', serif;
 }
 
 .archive-meta {
@@ -262,7 +266,7 @@ cite, tt {
  ************************************/
 
 .container-header {
-    background-color: rgb(236, 234, 234);
+    /* background-color: rgb(236, 234, 234); */
     align-items: center;
     height: 1em
 }
