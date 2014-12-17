@@ -35,6 +35,11 @@
                                 <a class="post-category" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
                             {% endfor %}
                         </p>
+                        {% include 'twitter.html' %}
+                        {% include 'google-plus.html' %}
+                        <p class="post-date">
+                            in <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a> &middot; {{ article.locale_date }}
+                        </p>
                 </header>
             </section>
             {{ article.content }}
