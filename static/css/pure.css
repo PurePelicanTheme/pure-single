@@ -94,7 +94,7 @@ pre {
 }
 
 .brand-main {
-    margin: 0px;
+    margin: 0 0 10px 0;
 }
 
 .brand-main a {
@@ -123,7 +123,13 @@ pre {
     text-decoration: none;
     margin-left: 15px;
     text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-    color: #fff;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.social-footer a {
+    color: rgba(0, 0, 0, 0.8);
+    margin-left: 2px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
 
 .content-subhead {
@@ -156,12 +162,26 @@ pre {
     margin-top: -10px;
 }
 
+.post-date {
+    color: #999;
+    font-size: 90%;
+    margin: 2px;
+}
+
+.post-date a {
+    color: #999;
+}
+
 .post-category {
     margin: 0 0.1em;
     padding: 0.2em 0.6em;
-    color: #fff;
-    background: #999;
+    color: rgba(29, 31, 13, 0.85);
+    background: rgba(153, 153, 153, 0.4);
     font-size: 90%;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(128, 128, 128, 0.71);
 }
 
 .archive-item {
@@ -280,14 +300,21 @@ cite, tt {
     align-items: center;
 }
 
+.links {
+    margin: 4px 0;
+}
+
 .links a {
     font-size: 15px;
     font-family: 'PT Serif', serif;
-    margin: 0px;
     letter-spacing: 2px;
     text-shadow: 0 1px 3px rgba(0,0,0,0.3);
     text-decoration: none;
     color: #000; 
+}
+
+.twitter-share-button {
+    width: 85px !important;
 }
 
 

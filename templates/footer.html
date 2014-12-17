@@ -1,6 +1,14 @@
 <footer class="footer">
-    <p>&copy; {{ AUTHOR }} &ndash;
-        Built with <a href="https://github.com/PurePelicanTheme/pure-single">Pure Theme</a>
+
+    <p class="social-footer">
+        {% for title, link in SOCIAL %}
+            <a class="social-footer" href="{{ link }}">
+                <i class="fa fa-{{ title }} fa-1x"></i>
+            </a>
+        {% endfor %}
+        -
+        &copy; {{ AUTHOR }} &ndash;
+        Built with <a href="https://github.com/haridas/pure-single">Pure Theme</a>
         for <a href="http://blog.getpelican.com/">Pelican</a>
     </p>
 </footer>
