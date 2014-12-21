@@ -121,16 +121,10 @@ pre {
 }
 .social a {
     text-decoration: none;
-    margin-left: 15px;
     text-shadow: 0 1px 3px rgba(0,0,0,0.3);
     color: rgba(0, 0, 0, 0.8);
 }
 
-.social-footer a {
-    color: rgba(0, 0, 0, 0.8);
-    margin-left: 2px;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-}
 
 .content-subhead {
     text-transform: uppercase;
@@ -208,9 +202,16 @@ pre {
 
 .footer {
     text-align: center;
-    padding: 1em 0;
     font-size: 75%;
+    color: rgba(0, 0, 0, 0.8);
+    margin-left: 2px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
+
+.footer a {
+    color: rgba(0, 0, 0, 0.7);
+}
+
 .footer .pure-menu a:hover,
 .footer .pure-menu a:focus {
     background: none;

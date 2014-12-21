@@ -26,9 +26,6 @@
     <link href="{{ FAVICON_URL }}" rel="icon">
     {% endif %}
 
-    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">  -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-
     <!-- Google Fonts -->
 
     <!--
@@ -39,13 +36,14 @@
     -->
 
     <link href='http://fonts.googleapis.com/css?family=PT+Mono|PT+Serif|PT+Sans' rel='stylesheet' type='text/css'>
-
-
-    
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pure.css">
+
     {% block head_css %}{% endblock %}
 
+    <!--
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    -->
+
     {% block head_js %}{% endblock %}
 </head>
 
@@ -81,11 +79,14 @@
                                             </a>
                                         </p>
                                     {% endfor %}
-
                                 <p class="social">
-                                    {% for title, link in SOCIAL %}
-                                        <a href="{{ link }}">
-                                            <i class="fa fa-{{ title }} fa-3x"></i>
+                                    {% for logo in SOCIAL %}
+                                        <a href="{{logo.2}}">
+                                            {% if logo|length > 3 %}
+                                                <img src="{{logo.1}}" alt="menu icon" width="{{logo.3.0}}" height="{{logo.3.1}}" />
+                                            {% else %}
+                                                <img src="{{logo.1}}" alt="menu icon" />
+                                            {% endif %}
                                         </a>
                                     {% endfor %}
                                 </p>
