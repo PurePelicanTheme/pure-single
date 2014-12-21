@@ -87,9 +87,8 @@ pre {
     clear: both;
 }
 
-.header {
+.content-sidebar {
     text-align: center;
-    width: 767px;
     max-width: 100%;
 }
 
