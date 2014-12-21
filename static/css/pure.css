@@ -281,6 +281,16 @@ cite, tt {
     border-radius: 3px;
 }
 
+blockquote {
+    margin: 1px;
+    font-size: 90%;
+    background-color: #F7F7F9;
+    border: 1px solid #D5D5E7;
+    padding: 0 0.3em;
+    border-radius: 3px;
+    overflow: auto;
+}
+
 
 /*************************************
  * New Layout styles
@@ -294,6 +304,7 @@ cite, tt {
 
 .container-body {
     display: flex;
+    /* height: calc(100vh - 3em); */
 }
 
 .container-footer {
@@ -338,6 +349,10 @@ cite, tt {
     padding: 0 20px;
 }
 
+.section {
+    overflow: auto;
+}
+
 
 /******************/
 
@@ -367,10 +382,10 @@ cite, tt {
         margin: 0;
     }
 
-    .content {
-        padding: 1em 1.5em 0;
-        font-size: 90%;
+    .column {
+        padding: 0 5px; 
     }
+
 
     .cover-body {
         padding-bottom: 5%;
@@ -387,7 +402,4 @@ cite, tt {
     #layout {
         padding: 0;
     }
-}
-
-@media (max-width: 480px) {
 }
