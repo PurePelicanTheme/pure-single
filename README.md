@@ -29,10 +29,14 @@ Theme is responsive.
 
 ## Screen shots
 
-1. ![Home Page](./static/images/screenshots/home.png "Home Page")
-2. ![Article Page](./static/images/screenshots/article.png "Article Page")
-3. ![Mobile Version](./static/images/screenshots/mobile-version.png "Mobile
-   Version.")
+#### Home page
+    ![Home Page](./static/images/screenshots/home.png "Home Page")
+
+#### Article Page
+    ![Article Page](./static/images/screenshots/article.png "Article Page")
+
+#### Mobile Version
+    ![Mobile Version](./static/images/screenshots/mobile-version.png "Mobile Version.")
 
 
 ## Aditional features
