@@ -30,13 +30,13 @@ Theme is responsive.
 ## Screen shots
 
 #### Home page
-    ![Home Page](./static/images/screenshots/home.png "Home Page")
+![Home Page](./static/images/screenshots/home.png "Home Page")
 
 #### Article Page
-    ![Article Page](./static/images/screenshots/article.png "Article Page")
+![Article Page](./static/images/screenshots/article.png "Article Page")
 
 #### Mobile Version
-    ![Mobile Version](./static/images/screenshots/mobile-version.png "Mobile Version.")
+![Mobile Version](./static/images/screenshots/mobile-version.png "Mobile Version.")
 
 
 ## Aditional features
