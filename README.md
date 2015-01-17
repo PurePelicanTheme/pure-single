@@ -27,6 +27,14 @@ Theme is responsive.
 ## Custom article metadata:
 * `sidebarimage` - will replace the image on the sidebar on an article basis
 
+## Screen shots
+
+1. ![Home Page](./static/images/screenshots/home.png "Home Page")
+2. ![Article Page](./static/images/screenshots/article.png "Article Page")
+3. ![Mobile Version](./static/images/screenshots/mobile-version.png "Mobile
+   Version.")
+
+
 ## Aditional features
 * [FitVids](https://github.com/davatron5000/FitVids.js) jQuery plugin for fluid width video embeds.
 
