@@ -66,7 +66,7 @@
                             <hgroup>
 
                                 {% if PROFILE_IMG_URL %}
-                                    <img class="avatar" src="{{ PROFILE_IMG_URL }}">
+                                <img class="avatar" src="{{SITEURL}}/{{ PROFILE_IMG_URL }}">
                                 {% endif %}
 
                                 <h1 class="brand-main"><a href="{{ SITEURL }}">{{ SITENAME }}</a></h1>
@@ -83,9 +83,9 @@
                                     {% for logo in SOCIAL %}
                                         <a href="{{logo.2}}">
                                             {% if logo|length > 3 %}
-                                                <img src="{{logo.1}}" alt="menu icon" width="{{logo.3.0}}" height="{{logo.3.1}}" />
+                                                <img src="{{SITEURL}}/{{logo.1}}" alt="menu icon" width="{{logo.3.0}}" height="{{logo.3.1}}" />
                                             {% else %}
-                                                <img src="{{logo.1}}" alt="menu icon" />
+                                                <img src="{{SITEURL}}{{logo.1}}" alt="menu icon" />
                                             {% endif %}
                                         </a>
                                     {% endfor %}
