@@ -1,8 +1,10 @@
 <footer class="footer">
         {% for logo in SOCIAL %}
-            <a href="{{logo.2}}">
-                {{logo.0}} {% if not loop.last %} | {% endif %}
-            </a>
+            {% if not loop.last %}
+                <a href="{{logo.2}}"> {{logo.0}}</a> |
+            {% else %}
+                <a href="{{logo.2}}"> {{logo.0}}</a>
+            {% endif %}
         {% endfor %}
         &ndash;
         &copy; {{ AUTHOR }} &ndash;
