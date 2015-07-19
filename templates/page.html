@@ -2,16 +2,14 @@
 {% block title %}{{ page.title|striptags }} // {{ super() }}{% endblock title %}
 
 {% block content %}
-    <div class="pure-u">
-        <div class="content">
+    <div class="content">
+        <div class="column">
             <h1 class="content-subhead">{{ page.title }}</h1>
             <p>{{ page.content }}</p>
 
-	    {% if DISQUS_ON_PAGES %}
-	    {% include 'disqus.html' %}
-	    {% endif %}
+            {% if DISQUS_ON_PAGES %}
+            {% include 'disqus.html' %}
+            {% endif %}
         </div>
-
-    {% include 'footer.html' %}
     </div>
 {% endblock %}

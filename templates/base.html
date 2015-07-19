@@ -19,52 +19,102 @@
     {% endif %}
 
     {% block head %}
-        <title>{% block title %}{{ SITENAME }} // {{ TAGLINE }}{% endblock title %}</title>
+    <title>{% block title %}{{ SITENAME }} {% if TAGLINE %} // {{ TAGLINE }} {% endif %}{% endblock title %}</title>
     {% endblock head %}
 
     {% if FAVICON_URL %}
     <link href="{{ FAVICON_URL }}" rel="icon">
     {% endif %}
 
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <!-- Google Fonts -->
+
+    <!--
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,300italic,300|Roboto:400,300,300italic,400italic,700,500|Open+Sans:400,400italic,600|Source+Sans+Pro:400,300italic,300,400italic,600' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Mono|Inconsolata|Source+Code+Pro:400,300,500|Ubuntu+Mono:400,400italic,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Serif|PT+Sans|Libre+Baskerville|Droid+Serif' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lora|Slabo+27px' rel='stylesheet' type='text/css'>
+    -->
+
+    <link href='http://fonts.googleapis.com/css?family=PT+Mono|PT+Serif|PT+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pure.css">
+
     {% block head_css %}{% endblock %}
 
+    <!--
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    -->
+
     {% block head_js %}{% endblock %}
 </head>
 
 <body>
-    <div class="pure-g-r" id="layout">
-        <div class="sidebar pure-u">
-            <div class="cover-img" style="background-image: url('{% block sidebar %}{{ COVER_IMG_URL }}{% endblock %}')">
-                <div class="cover-body">
-                    <header class="header">
-                        <hgroup>
-                            {% if PROFILE_IMG_URL %}
-                            <img class="avatar" src="{{ PROFILE_IMG_URL }}">
-                            {% endif %}
-                            <h1 class="brand-main"><a href="{{ SITEURL }}">{{ SITENAME }}</a></h1>
-                            <p class="tagline">{{ TAGLINE }}</p>
-                            {% for title, link in MENUITEMS %}
-                                <p class="links"><a href="{{ SITEURL }}/{{ link }}">{{ title }}</a></p>
-                            {% endfor %}
-                                <p class="social">
-                            {% for title, link in SOCIAL %}
-                                    <a href="{{ link }}">
-                                        <i class="fa fa-{{ title }} fa-3x"></i>
-                                    </a>
-                            {% endfor %}
-                                </p>
-                        </hgroup>
-                    </header>
-                </div>
+    <div class="container">
+
+        {% block container_header %}
+            <div class="container-header">
             </div>
-        </div>
-        {% block content %}
         {% endblock %}
+
+        {% block container_body %}
+
+            <div class="container-body">
+
+                {% block body_sidebar %}
+                    <div class="body-sidebar">
+                        <header class="content-sidebar">
+
+                            <hgroup>
+
+                                {% if PROFILE_IMG_URL %}
+                                <img class="avatar" src="{{SITEURL}}/{{ PROFILE_IMG_URL }}">
+                                {% endif %}
+
+                                <h1 class="brand-main"><a href="{{ SITEURL }}">{{ SITENAME }}</a></h1>
+
+                                {% if TAGLINE %} <p class="tagline">{{ TAGLINE }}</p> {% endif %}
+
+                                    {% for title, link in MENUITEMS %}
+                                        <p class="links">
+                                            <a href="{{ SITEURL }}/{{ link }}">{{ title }}
+                                            </a>
+                                        </p>
+                                    {% endfor %}
+                                <p class="social">
+                                    {% for logo in SOCIAL %}
+                                        <a href="{{logo.2}}">
+                                            {% if logo|length > 3 %}
+                                                <img src="{{SITEURL}}/{{logo.1}}" alt="menu icon" width="{{logo.3.0}}" height="{{logo.3.1}}" />
+                                            {% else %}
+                                                <img src="{{SITEURL}}{{logo.1}}" alt="menu icon" />
+                                            {% endif %}
+                                        </a>
+                                    {% endfor %}
+                                </p>
+                            </hgroup>
+                    </header>
+
+                    </div>
+                {% endblock %}
+
+                {% block content_column %}
+
+                    <div class="body-column">
+                        {% block content %}
+                        {% endblock %}
+                    </div>
+
+                {% endblock %}
+            </div>
+        {% endblock %}
+
+        {% block container_footer %}
+            <div class="container-footer">
+                {% include 'footer.html' %}
+            </div>
+        {% endblock %}
+
     </div>
+
     <script>
         var $top = $('.go-top');
 

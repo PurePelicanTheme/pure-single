@@ -1,6 +1,13 @@
 <footer class="footer">
-    <p>&copy; {{ AUTHOR }} &ndash;
-        Built with <a href="https://github.com/PurePelicanTheme/pure-single">Pure Theme</a>
+        {% for logo in SOCIAL %}
+            {% if not loop.last %}
+                <a href="{{logo.2}}"> {{logo.0}}</a> |
+            {% else %}
+                <a href="{{logo.2}}"> {{logo.0}}</a>
+            {% endif %}
+        {% endfor %}
+        &ndash;
+        &copy; {{ AUTHOR }} &ndash;
+        <i> <a href="https://github.com/haridas/hn-theme">Built with HN Theme</a> </i>
         for <a href="http://blog.getpelican.com/">Pelican</a>
-    </p>
 </footer>

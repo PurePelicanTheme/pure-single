@@ -21,23 +21,30 @@
     {% endif %}
 {% endblock %}
 
+{% block main_sidebar %}
+{% endblock %}
+
 {% block content %}
-    <div class="pure-u">
-        <div class="content">
+    <div class="content">
+        <div class="column">
             <section class="post">
                 <header class="post-header">
-                    <h1>{{ article.title }}</h1>
+                    <h1 class="article-title">{{ article.title }}</h1>
                         <p class="post-meta">
-                            // under {% for tag in article.tags %}
+                            Tags: {% for tag in article.tags %}
                                 <a class="post-category" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
                             {% endfor %}
+                        </p>
+                        {% include 'twitter.html' %}
+                        {% include 'google-plus.html' %}
+                        <p class="post-date">
+                            in <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a> &middot; {{ article.locale_date }}
                         </p>
                 </header>
             </section>
             {{ article.content }}
             <a href="#" class="go-top">Go Top</a>
             {% include 'disqus.html' %}
-            {% include 'footer.html' %}
         </div>
     </div>
 {% endblock  %}

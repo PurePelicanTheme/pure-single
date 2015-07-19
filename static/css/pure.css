@@ -6,13 +6,16 @@
 
 a {
     text-decoration: none;
-    color: rgb(142, 142, 214);
+    color: #1229DB;
 }
 a:hover,
 a:focus {
     text-decoration: underline;
 }
 
+h1, h2, h3 {
+    font-family: 'PT Serif', serif;
+}
 
 .comments {
     padding: 50px 0 0;
@@ -26,24 +29,16 @@ a:focus {
 }
 
 pre {
-    padding: 15px 15px 15px 15px;
     font-size: 90%;
-    box-shadow: 2px 2px 2px #888;
-}
-
-.sidebar {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    width: 25%;
-    margin-left: -25%;
 }
 
 .avatar {
     width: 100px;
     height: 100px;
     border-radius: 50px;
-    margin-left: 1em;
+
+    /* margin-left: 1em; */
+
     border: 3px solid #fff;
     z-index: 500;
     background-color: #fff;
@@ -52,30 +47,11 @@ pre {
     box-shadow: 0 1px 1px rgba(0,0,0,0.3);
 }
 
-.cover-img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-position: center;
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    -webkit-box-shadow: inset -1px 0 0 rgba(0,0,0,0.3);
-    -moz-box-shadow: inset -1px 0 0 rgba(0,0,0,0.3);
-    box-shadow: inset -1px 0 0 rgba(0,0,0,0.3);
-}
-
 .cover-body {
     position: absolute;
-    bottom: 0;
     max-width: 100%;
-    padding-bottom: 0;
-    padding-top: 100px;
-    background-image: linear-gradient(to top,rgba(0,0,0,0.5) 0,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%);
+    bottom: 0px;
+    top: calc(50% - 153px);
 }
 
 .brand-title,
@@ -84,6 +60,12 @@ pre {
 }
 .brand-title {
     text-transform: uppercase;
+}
+
+.article-title {
+    font-size: 2em;
+    color: #333332;
+    letter-spacing: -1px;
 }
 
 .article-info {
@@ -105,21 +87,23 @@ pre {
     clear: both;
 }
 
-.header {
+.content-sidebar {
     text-align: center;
-    width: 767px;
     max-width: 100%;
+}
+
+.brand-main {
+    margin: 0 0 10px 0;
 }
 
 .brand-main a {
     text-transform: uppercase;
     text-decoration: none;
-    margin-left: 15px;
     font-size: 25px;
-    color: #fff;
+    color: #000;
     border-bottom: 1px solid rgba(255,255,255,0.3);
     text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-    font-family: "freight-sans-pro","Myriad Pro","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+    font-family: 'PT Serif',serif;
 }
 
 .tagline {
@@ -136,20 +120,10 @@ pre {
 }
 .social a {
     text-decoration: none;
-    margin-left: 15px;
     text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-    color: #fff;
+    color: rgba(0, 0, 0, 0.8);
 }
 
-.links a {
-    font-size: 15px;
-    padding-left: 15px;
-    font-family: sans-serif;
-    letter-spacing: 2px;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-    text-decoration: none;
-    color: #fff;
-}
 
 .content-subhead {
     text-transform: uppercase;
@@ -162,12 +136,9 @@ pre {
 }
 
 .content {
-    padding: 2em 3em 0;
-    max-width: 1000px;
-    font-size: 110%;
-    line-height: 1.45;
-    color: #333332;
+    padding: 0 0 12px 0;
 }
+
 
 .post {
     padding-bottom: 1em;
@@ -184,12 +155,26 @@ pre {
     margin-top: -10px;
 }
 
+.post-date {
+    color: #999;
+    font-size: 90%;
+    margin: 2px;
+}
+
+.post-date a {
+    color: #999;
+}
+
 .post-category {
     margin: 0 0.1em;
     padding: 0.2em 0.6em;
-    color: #fff;
-    background: #999;
+    color: rgba(29, 31, 13, 0.85);
+    background: rgba(153, 153, 153, 0.4);
     font-size: 90%;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(128, 128, 128, 0.71);
 }
 
 .archive-item {
@@ -199,10 +184,13 @@ pre {
 
 .archive-date {
     margin: 0;
+    color: rgb(155, 147, 147);
 }
 
 .archive-post {
     line-height: 130%;
+    font-size: 1.5em;
+    font-family: 'PT Serif', serif;
 }
 
 .archive-meta {
@@ -213,9 +201,16 @@ pre {
 
 .footer {
     text-align: center;
-    padding: 2em 0;
     font-size: 75%;
+    color: rgba(0, 0, 0, 0.8);
+    margin-left: 2px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
+
+.footer a {
+    color: rgba(0, 0, 0, 0.7);
+}
+
 .footer .pure-menu a:hover,
 .footer .pure-menu a:focus {
     background: none;
@@ -259,9 +254,108 @@ pre {
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-.highlight pre {
-    font-size: 75%;
+.highlight {
+    background-color: rgba(255, 255, 204, 0.3);
+    border-style: solid;
+    border-color: rgb(203, 203, 203);
+    border-width: 1px;
+    border-radius: 3px;
+    padding: 10px 10px 10px 10px;
+    overflow: auto;
 }
+
+.highlight pre {
+    font-size: 85%;
+    font-family: 'PT monospace', monospace;
+    /* overflow: auto; */
+}
+
+cite, tt {
+    color: #c25;
+    margin: 1px;
+    font-size: 90%;
+    background-color: #F7F7F9;
+    border: 1px solid #D5D5E7;
+    padding: 0 0.3em;
+    border-radius: 3px;
+}
+
+blockquote {
+    margin: 1px;
+    font-size: 90%;
+    background-color: #F7F7F9;
+    border: 1px solid #D5D5E7;
+    padding: 0 0.3em;
+    border-radius: 3px;
+    overflow: auto;
+}
+
+
+/*************************************
+ * New Layout styles
+ ************************************/
+
+.container-header {
+    /* background-color: rgb(236, 234, 234); */
+    align-items: center;
+    height: 1em
+}
+
+.container-body {
+    display: flex;
+    /* height: calc(100vh - 3em); */
+}
+
+.container-footer {
+    background-color: rgb(236, 234, 234);
+    align-items: center;
+}
+
+.links {
+    margin: 4px 0;
+}
+
+.links a {
+    font-size: 15px;
+    font-family: 'PT Serif', serif;
+    letter-spacing: 2px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    text-decoration: none;
+    color: #000; 
+}
+
+.twitter-share-button {
+    width: 85px !important;
+}
+
+
+.body-sidebar {
+    flex: 1;
+    margin-top: 1em;
+}
+
+.body-column {
+    flex: 3;
+    justify-content: center;
+}
+
+.column {
+    /* font-family: 'Open Sans', serif; */
+    /* font-family: 'PT Serif', serif; */
+    font-family: 'PT Sans', sans-serif;
+    /*font-family: 'Open Sans', sans-serif; */
+    max-width: 690px;
+    padding: 0 20px;
+}
+
+.section {
+    overflow: auto;
+}
+
+
+/******************/
+
+
 
 /* LAYOUT CSS */
 #layout {
@@ -269,21 +363,28 @@ pre {
     position: relative;
 }
 @media (max-width: 767px) {
-    .sidebar {
+
+    .container-body {
+        display: block;
+    }
+
+    .body-sidebar {
         width: 100%;
         position: relative;
         margin: 0;
-        height: 450px;
-    }
-    .content {
-        padding: 1em 1.5em 0;
-        font-size: 85%;
+        top: 1em;
     }
 
-    .cover-img {
-        background-position: 0;
-        background-size: cover;
+    .body-column {
+        width: 100%;
+        position: relative;
+        margin: 0;
     }
+
+    .column {
+        padding: 0 5px; 
+    }
+
 
     .cover-body {
         padding-bottom: 5%;
@@ -299,11 +400,5 @@ pre {
 
     #layout {
         padding: 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .cover-img {
-        background-position: 0;
     }
 }
