@@ -42,21 +42,40 @@
                 <div class="cover-body">
                     <header class="header">
                         <hgroup>
-                            {% if PROFILE_IMG_URL %}
-                            <img class="avatar" src="{{ PROFILE_IMG_URL }}">
+    			    {% if PROFILE_IMG_URL %}
+			        <img class="avatar" src="{{ PROFILE_IMG_URL }}">
                             {% endif %}
-                            <h1 class="brand-main"><a href="{{ SITEURL }}">{{ SITENAME }}</a></h1>
+
+			    <h1 class="brand-main"><a href="{{ SITEURL }}">{{ SITENAME }}</a></h1>
+
+			    <p class="social">
+                            {% for title, link in SOCIAL %}
+                                <a href="{{ link }}">
+                                <i class="fa fa-{{ title }} fa-2x"></i>
+                                </a>
+                                {% endfor %}
+                            </p>
+			    
                             <p class="tagline">{{ TAGLINE }}</p>
                             {% for title, link in MENUITEMS %}
                                 <p class="links"><a href="{{ SITEURL }}/{{ link }}">{{ title }}</a></p>
                             {% endfor %}
-                                <p class="social">
-                            {% for title, link in SOCIAL %}
-                                    <a href="{{ link }}">
-                                        <i class="fa fa-{{ title }} fa-3x"></i>
-                                    </a>
-                            {% endfor %}
-                                </p>
+
+			    {% if DISPLAY_PAGES_ON_MENU %}
+                                {% for page in PAGES %}
+                                    <p class="links"><a href="{{ SITEURL }}/pages/{{ page.slug }}">{{ page.title }}</a></p>
+                                {% endfor %}
+			    {% endif %}
+				    
+			    <p class="links"><a href="{{ SITEURL }}/archives.html">Archives</a></p>
+     			    <p class="links"><a href="{{ SITEURL }}/tags.html">Tags</a></p>
+			    <p class="links"><a href="{{ SITEURL }}/categories.html">Categories</a></p>
+			    <p class="links"><a href="{{ SITEURL }}/resume/">Resume</a></p>
+        		    <!-- {% if DISPLAY_CATEGORIES_ON_MENU %} -->
+			    <!-- 	{% for cat, null in categories[:5] %} -->
+                            <!--         <p class="links"><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat | capitalize }}</a></p> -->
+                            <!--     {% endfor %} -->
+			    <!-- {% endif %} -->			    
                         </hgroup>
                     </header>
                 </div>

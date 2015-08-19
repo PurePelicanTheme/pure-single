@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Categories // {{ super() }}{% endblock title %}
+
+{% block content %}
+    <div class="pure-u">
+        <div class="content">
+            <div class="posts">
+                <h1 class="content-subhead">Categories</h1>
+                <ul>
+                {% for category, articles in categories|sort %}
+                  <li><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+	{% include 'footer.html' %}
+    </div>
+{% endblock content %}
