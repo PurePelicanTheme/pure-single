@@ -1,40 +1,20 @@
 {% extends 'base.html' %}
+{% block title %}all posts // {{ super() }}{% endblock title %}
+{% block pagetitle %}all posts{% endblock pagetitle %}
+
 
 {% block content %}
-    <div class="content">
-        <!-- A wrapper for all the blog posts -->
-        <div class="column">
-            <div class="posts">
-                <h1 class="content-subhead">
-                    {% block pagetitle %}
-                        {% if not articles_page.has_previous() %}
-                            Latest posts
-                        {% else %}
-                            Posts
-                        {% endif %}
-                    {% endblock pagetitle %}
-                    {% if articles_page.has_previous() %}
-                        &ndash; Page&nbsp;{{ articles_page.number }}
-                    {% endif %}
-                </h1>
-                {% for article in articles_page.object_list %}
-                    {# Include's latex math only if an article in the index has it present #}
-                    {% if article and article.latex and latex is not defined %}
-                        {% set latex = True %}
-                        {{ article.latex }}
-                    {% endif %}
-                    <section class="post">
-                        <header class="post-header">
-                            <h3><a class="post-title" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h3>
-                            <p class="post-meta">{{ article.summary }}</p>
-                            <p class="post-meta">
-                                in <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a> &middot; {{ article.locale_date }}
-                            </p>
-                        </header>
-                    </section>
+    <div class="pure-u-1">
+        <div class="content">
+            <div class="column">
+                <h1 class="content-subhead">All posts</h1>
+                {% for article in dates %}
+                    <div class="archive-item">
+                        <h5 class="archive-date">{{ article.date|strftime('%Y %d %B') }}</h5>
+                        <div class="archive-post"><a href="{{ article.url }}">{{ article.title }}</a></div>
+                    </div>
                 {% endfor %}
-                {% include 'pagination.html' %}
             </div>
         </div>
     </div>
-{% endblock content %}
+{% endblock %}
