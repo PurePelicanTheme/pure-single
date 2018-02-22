@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+{% block title %}Authors | {{ super() }} {% endblock title %}
+{% block pagetitle %} Authors {% endblock pagetitle %}
+
+{% block content %}
+  <div class="pure-u-1">
+    <div class="content">
+
+
+      <h1 class="content-subhead">Authors</h1>
+      <ul>
+
+        {% for author, articles in authors|sort %}
+          <li><a href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a></li>
+        {% endfor %}
+        {% include 'footer.html' %}
+
+      </ul>
+    </div>
+  </div>
+{% endblock content %}

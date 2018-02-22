@@ -6,7 +6,7 @@ Theme is responsive.
 
 ## PELICANCONF.PY
 
-* `COVER_IMG_URL` - Set the sidebar image.
+* `COVER_IMG_URL` - Set the sidebar image (Optional).
 * `PROFILE_IMG_URL` - Set the image for the top circle cutout.
 * `TAGLINE` - Used for the page titles and some meta tags.
 * `FAVICON_URL` - Set the favicon image

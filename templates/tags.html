@@ -7,7 +7,7 @@
     <div class="content">
       <h1 class="content-subhead">All Tags</h1>
       <ul>
-        
+
         {% for tag, articles in tags|sort %}
           <li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> ({{ articles|count }}) </li>
         {% endfor %}

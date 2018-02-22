@@ -38,7 +38,11 @@
 <body>
     <div class="pure-g-r" id="layout">
         <div class="sidebar pure-u">
-            <div class="cover-img" style="background-image: url('{% block sidebar %}{{ COVER_IMG_URL }}{% endblock %}')">
+            <div class="cover-img" {% if COVER_IMG_URL -%}
+                style="background-image: url('{% block sidebar %}{{ COVER_IMG_URL }}{% endblock %}')"
+                {%- else -%}
+                style="background: none repeat scroll 0% 0% #3D4F5D"
+                {%- endif -%}>
                 <div class="cover-body">
                     <header class="header">
                         <hgroup>
@@ -50,6 +54,11 @@
                             {% for title, link in MENUITEMS %}
                                 <p class="links"><a href="{{ link }}">{{ title }}</a></p>
                             {% endfor %}
+                            {% if DISPLAY_PAGES_ON_MENU %}
+                            {% for page in PAGES %}
+                                <p class="links"><a href="{{ SITEURL }}/pages/{{ page.slug }}">{{ page.title }}</a></p>
+                            {% endfor %}
+                            {% endif %}
                                 <p class="social">
                             {% for title, link in SOCIAL %}
                                     <a href="{{ link }}">
