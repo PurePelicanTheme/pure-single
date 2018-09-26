@@ -62,10 +62,17 @@
                                 {% if TAGLINE %} <p class="tagline">{{ TAGLINE }}</p> {% endif %}
 
                                     {% for title, link in MENUITEMS %}
-                                        <p class="links">
-                                            <a href="{{ SITEURL }}/{{ link }}">{{ title }}
-                                            </a>
-                                        </p>
+                                        {% if link.startswith('http://') or link.startswith('https://') %}
+                                            <p class="links">
+                                                <a href="{{ link }}">{{ title }}
+                                                </a>
+                                            </p>
+                                        {% else %}
+                                            <p class="links">
+                                                <a href="{{ SITEURL }}/{{ link }}">{{ title }}
+                                                </a>
+                                            </p>
+                                        {% endif %}
                                     {% endfor %}
                                 <p class="social">
                                     {% for logo in SOCIAL %}
