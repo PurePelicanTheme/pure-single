@@ -47,7 +47,7 @@
                     <header class="header">
                         <hgroup>
                             {% if PROFILE_IMG_URL %}
-                            <img class="avatar" src="{{ PROFILE_IMG_URL }}">
+                            <a href="{{ SITEURL }}"><img class="avatar" src="{{ PROFILE_IMG_URL }}"><a>
                             {% endif %}
                             <h1 class="brand-main"><a href="{{ SITEURL }}">{{ SITENAME }}</a></h1>
                             <p class="tagline">{{ TAGLINE }}</p>
