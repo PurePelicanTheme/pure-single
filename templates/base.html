@@ -26,7 +26,7 @@
     <link href="{{ FAVICON_URL }}" rel="icon">
     {% endif %}
 
-    <link href='http://fonts.googleapis.com/css?family=PT+Mono|PT+Serif|PT+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=PT+Mono|PT+Serif|PT+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pure.css">
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/asciidoctor.css">
 
@@ -62,7 +62,7 @@
                                 {% if TAGLINE %} <p class="tagline">{{ TAGLINE }}</p> {% endif %}
 
                                     {% for title, link in MENUITEMS %}
-                                        {% if link.startswith('http://') or link.startswith('https://') %}
+                                        {% if link.startswith('https://') or link.startswith('https://') %}
                                             <p class="links">
                                                 <a href="{{ link }}">{{ title }}
                                                 </a>

@@ -1,17 +1,4 @@
 {% if GOOGLE_ANALYTICS %}
-    <!--
-    <script type="text/javascript">
-        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-    <script type="text/javascript">
-        try {
-            var pageTracker = _gat._getTracker("{{ GOOGLE_ANALYTICS }}");
-            pageTracker._trackPageview();
-            } catch(err) {}
-    </script>
-    -->
-
     <script type="text/javascript">
 
       var _gaq = _gaq || [];
@@ -44,7 +31,7 @@
 </script>
 
 <noscript>
- <img src="http://{{PIWIK_URL}}/piwik.php?idsite={{PIWIK_SITE_ID}}&amp;rec=1" style="border:0" alt="" />
+ <img src="https://{{PIWIK_URL}}/piwik.php?idsite={{PIWIK_SITE_ID}}&amp;rec=1" style="border:0" alt="" />
 </noscript>
 <!-- End Piwik Code -->
 {% endif%}
