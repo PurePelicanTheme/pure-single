@@ -29,10 +29,14 @@
     <link href='https://fonts.googleapis.com/css?family=PT+Mono|PT+Serif|PT+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pure.css">
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/asciidoctor.css">
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pymdext.css">
 
-    {% block head_css %}{% endblock %}
+    {% block head_css %}
+	{% endblock %}
 
-    {% block head_js %}{% endblock %}
+    {% block head_js %}
+	{% endblock %}
+	<script src="{{ SITEURL }}/theme/js/pymdext.js"></script>
 </head>
 
 <body>
@@ -109,7 +113,6 @@
         {% endblock %}
 
     </div>
-
     <script>
         var $top = $('.go-top');
 
